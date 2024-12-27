@@ -6,6 +6,7 @@
     "build": "webpack",
     "check": "prettier . --check",
     "fix": "prettier . --write",
+    "clean": "rm -rf  dist/ web-ext-artifacts/",
     "publish": "webpack --no-watch --mode production && web-ext build --overwrite-dest"
   },
   "devDependencies": {
