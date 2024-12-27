@@ -1,3 +1,4 @@
+const { log } = require("./log.js");
 const {
   wrapImageWithSearchLink,
   getProfileImages,
@@ -5,12 +6,11 @@ const {
 } = require("./clickToFilter.js");
 
 // Immediately log to show the extension script is loaded
-console.log("Better Gmail Extension Loading...", window.location.href);
+log("Better Gmail Extension Loading...", window.location.href);
 
 function handleDOMChanges() {
   const images = getProfileImages();
   images.forEach(wrapImageWithSearchLink);
-  console.debug("Images updated!");
 }
 
 // Wait for the page to be ready
@@ -35,14 +35,14 @@ function waitForElement(selector) {
 }
 
 async function init() {
-  console.log("Initializing Gmail extension...");
+  log("Initializing Gmail extension...");
   await waitForElement('div[role="main"]');
-  console.log("Gmail interface detected!");
+  log("Gmail interface detected!");
 
   addProfileHover();
 
   const observer = new MutationObserver((mutations) => {
-    console.debug("Page changed at:", new Date().toISOString());
+    // log("Page changed at:", new Date().toISOString());
     handleDOMChanges();
   });
 
