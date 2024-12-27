@@ -10,8 +10,7 @@
   "content_scripts": [
     {
       "matches": ["https://mail.google.com/*"],
-      "js": ["dist/content.bundle.js"],
-      "run_at": "document_idle"
+      "js": ["dist/content.bundle.js"]
     }
   ]
 }
