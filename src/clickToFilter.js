@@ -31,7 +31,7 @@ function addProfileHover() {
   const style = document.createElement("style");
   style.textContent = `
       img[jid] {
-          box-shadow: 0 0 5px 1px rgba(0, 255, 0, 0.8);
+          box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.8);
           transition: box-shadow 0.1s ease;
           }
           img[jid]:hover {
