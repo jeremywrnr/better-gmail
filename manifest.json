@@ -3,9 +3,7 @@
   "name": "Better Gmail Helper",
   "version": "1.0",
   "description": "Extension for Gmail: in a conversation, click a subject profile image to view all conversations with that subject",
-  "permissions": [
-    "*://mail.google.com/*"
-  ],
+  "permissions": ["*://mail.google.com/*"],
   "icons": {
     "128": "icons/icon-128.png"
   },

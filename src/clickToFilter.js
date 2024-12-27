@@ -22,7 +22,7 @@ function wrapImageWithSearchLink(img) {
     return;
   } else {
     // Replace profile img with anchor containing img
-    log("Wrapping image:", searchUrl)
+    log("Wrapping image:", searchUrl);
     img.parentNode.insertBefore(anchor, img);
     anchor.appendChild(img);
   }

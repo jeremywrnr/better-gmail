@@ -4,6 +4,8 @@
   "scripts": {
     "start": "web-ext run",
     "build": "webpack",
+    "check": "prettier . --check",
+    "fix": "prettier . --write",
     "publish": "webpack --no-watch --mode production && web-ext build --overwrite-dest"
   },
   "devDependencies": {

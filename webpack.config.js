@@ -1,12 +1,12 @@
-const path = require('path');
-const TerserPlugin = require('terser-webpack-plugin');
+const path = require("path");
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
-  mode: 'production',
-  entry: './src/content.js',
+  mode: "production",
+  entry: "./src/content.js",
   output: {
-    filename: 'content.bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    filename: "content.bundle.js",
+    path: path.resolve(__dirname, "dist"),
   },
   module: {
     rules: [
@@ -14,19 +14,21 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
-            presets: ['@babel/preset-env']
-          }
-        }
-      }
-    ]
+            presets: ["@babel/preset-env"],
+          },
+        },
+      },
+    ],
   },
   optimization: {
     minimize: true,
-    minimizer: [new TerserPlugin({
-      extractComments: false,
-    })],
+    minimizer: [
+      new TerserPlugin({
+        extractComments: false,
+      }),
+    ],
   },
-  watch: true
+  watch: true,
 };
