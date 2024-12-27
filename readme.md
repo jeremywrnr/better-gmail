@@ -35,7 +35,7 @@ available via `npm run-script`:
     rm -rf  dist/ web-ext-artifacts/
 ```
 
-Create asset for publishing:
+Create asset (`better_gmail_helper-1.0.zip`) for publishing:
 ```
 npm run publish
 ```
