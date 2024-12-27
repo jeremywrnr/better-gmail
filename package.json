@@ -1,0 +1,17 @@
+{
+  "name": "gmail-extension",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "web-ext run --keep-profile-changes --browser-console",
+    "build": "webpack && web-ext build"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "babel-loader": "^8.0.0",
+    "terser-webpack-plugin": "^5.3.11",
+    "web-ext": "^7.11.0",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^4.10.0"
+  }
+}
