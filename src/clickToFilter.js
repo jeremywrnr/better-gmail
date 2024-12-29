@@ -5,24 +5,35 @@ function getProfileImages() {
   return images;
 }
 
-// Function to wrap a single image
-function wrapImageWithSearchLink(img) {
+function wrapImageWithSubjectLink(img) {
   const jid = img.getAttribute("jid");
-  if (!jid) return;
-
   const searchUrl = `#search/from%3A${encodeURIComponent(jid)}`;
-  const anchor = document.createElement("a");
-  anchor.href = searchUrl;
+  wrapImageCommon(img, searchUrl);
+}
 
-  if (
-    img.parentNode.tagName === "A" &&
-    img.parentNode.href.includes(searchUrl)
-  ) {
-    // We've already wrapped this image
-    return;
+function wrapImageWithDomainLink(img) {
+  const jid = img.getAttribute("jid");
+  const domain = jid.split("@")[1];
+  const searchUrl = `#search/from%3A${encodeURIComponent(domain)}`;
+  wrapImageCommon(img, searchUrl);
+}
+
+function wrapImageCommon(img, searchUrl) {
+  let anchor, mustInsert;
+  if (img.parentNode.tagName === "A") {
+    anchor = img.parentNode;
   } else {
-    // Replace profile img with anchor containing img
-    log("Wrapping image:", searchUrl);
+    anchor = document.createElement("a");
+    mustInsert = true;
+  }
+
+  if (anchor.href.includes(searchUrl)) {
+    return;
+  }
+  
+  log("WRAP", searchUrl);
+  anchor.href = searchUrl;
+  if (mustInsert) {
     img.parentNode.insertBefore(anchor, img);
     anchor.appendChild(img);
   }
@@ -47,5 +58,6 @@ function addProfileHover() {
 module.exports = {
   addProfileHover,
   getProfileImages,
-  wrapImageWithSearchLink,
+  wrapImageWithSubjectLink,
+  wrapImageWithDomainLink,
 };
