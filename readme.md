@@ -13,10 +13,12 @@ FireFox extension.
 First: `npm i`
 
 Then:
+
 - activate src watching: `npm build`
 - run web-ext (browser): `npm run start`
 
-Others: 
+Others:
+
 ```
 Lifecycle scripts included in gmail-extension@1.0.0:
   start
@@ -36,6 +38,7 @@ available via `npm run-script`:
 ```
 
 Create asset (`better_gmail_helper-1.0.zip`) for publishing:
+
 ```
 npm run publish
 ```

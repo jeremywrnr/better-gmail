@@ -9,7 +9,7 @@ const {
 // Immediately log to show the extension script is loaded
 log("Extension Loading...", window.location.href);
 
-BETTER_GMAIL_TIMEOUT = 250
+BETTER_GMAIL_TIMEOUT = 250;
 
 function wrapImagesSubject() {
   const images = getProfileImages();
@@ -42,7 +42,10 @@ document.addEventListener("keyup", (event) => {
     clearInterval(clickToFilterInterval);
     log("WRAP SUBJECT");
     wrapImagesSubject();
-    clickToFilterInterval = setInterval(wrapImagesSubject, BETTER_GMAIL_TIMEOUT);
+    clickToFilterInterval = setInterval(
+      wrapImagesSubject,
+      BETTER_GMAIL_TIMEOUT,
+    );
   }
 });
 

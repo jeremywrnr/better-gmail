@@ -30,7 +30,7 @@ function wrapImageCommon(img, searchUrl) {
   if (anchor.href.includes(searchUrl)) {
     return;
   }
-  
+
   log("WRAP", searchUrl);
   anchor.href = searchUrl;
   if (mustInsert) {
